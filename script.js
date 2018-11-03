@@ -43,8 +43,6 @@ function update() {
     position_x+=x_velocity;
     position_y+=y_velocity;
 
-
-
     onGround=false;
     rightCollision = false;
     leftCollision = false;
@@ -97,6 +95,9 @@ function update() {
             y_velocity < 0)
         {
             position_y = platform[i].y + platform[i].h + 20;
+            if(y_velocity<-3) {
+                y_velocity=-3;
+            }
             topCollision = true;
         }
     }
